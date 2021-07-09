@@ -17,24 +17,36 @@ constructor(id, name , email, phone)
 }
 showdata()
 {
-    
-    const trelemnt = document.createElement("tr")
-    trelemnt.innerHTML=`
-    <tr>
-    <td>${this.name}</td>
-    <td>${this.email}</td>
-    <td>${this.phone}</td>
-    <td>
-        <BUTTON ID="EDIT" class="edit">EDIT</BUTTON>
-        <BUTTON ID="REMOVE" class="dd" >DELETE</BUTTON>
-        </td>
-       
-</tr>
-    
-    `
-    
-    tbody.appendChild(trelemnt);
-    return this;
+    if(nameinput.value , email.value, phone.value === "")
+    {
+        nameinput.style.borderColor="red";
+        email.style.borderColor="red";
+        phone.style.borderColor="red";
+alert("please enter your data")
+      
+    }else{
+        nameinput.style.borderColor="black";
+        email.style.borderColor="black";
+        phone.style.borderColor="black";
+        const trelemnt = document.createElement("tr")
+        trelemnt.innerHTML=`
+        <tr>
+        <td>${this.name}</td>
+        <td>${this.email}</td>
+        <td>${this.phone}</td>
+        <td>
+            <BUTTON ID="EDIT" class="edit" data=${this.id}>EDIT</BUTTON>
+            <BUTTON ID="REMOVE" class="dd" >DELETE</BUTTON>
+            </td>
+           
+    </tr>
+        
+        `
+        
+        tbody.appendChild(trelemnt);
+        return this;
+    }
+  
 }
 storeempoly()
 {
